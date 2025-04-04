@@ -6,13 +6,7 @@ btn.addEventListener('click', () =>{
     let searchTerm = inputSelector.value.trim(); 
 
     if (searchTerm === "") {
-        alert("Digite um termo para buscar!");
-        return;
-    }
-
-
-    if (searchTerm === "") {
-        alert("Digite um termo para buscar!");
+        alert("Digite um título para buscar!");
         return;
     }
 
