@@ -18,23 +18,6 @@ btn.addEventListener('click', () =>{
     let results = document.getElementById("results");
     results.innerHTML = ""
 
-    // books.forEach(book => {
-    //     let bookItem = document.createElement("p");
-    //     let bookDescription = document.createElement("p");
-    //     let bookAuthors = document.createElement("p");
-    //     let bookImage = document.createElement("img");
-
-    //     bookItem.textContent = book.volumeInfo.title;
-    //     bookDescription.textContent = book.volumeInfo.description;
-    //     bookAuthors.textContent = book.volumeInfo.authors;
-    //     bookImage.src = book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || "https://via.placeholder.com/128x192.png?text=Sem+Imagem";
-        
-    //     results.appendChild(bookItem);
-    //     results.appendChild(bookDescription);
-    //     results.appendChild(bookAuthors);
-    //     results.appendChild(bookImage);
-    // });
-
     function renderBook(book){
         let bookItem = document.createElement("div");
         bookItem.classList.add("bookCard");
@@ -73,11 +56,4 @@ btn.addEventListener('click', () =>{
 })
 
 
-//  hoisting
-// uma div no html para receber os dados dos livros
-// criar uma fução para renderizar esse método de acordo
-//   let bookItem = document.createElement("p");
-// let bookDescription = document.createElement("p");
-// let bookAuthors = document.createElement("p");
-// let bookImage = document.createElement("img");
-  
+
