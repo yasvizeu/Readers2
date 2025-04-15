@@ -35,7 +35,7 @@ btn.addEventListener('click', () =>{
     //     results.appendChild(bookImage);
     // });
 
-    function bookRender(book){
+    function renderBook(book){
         let bookItem = document.createElement("div");
         bookItem.classList.add("bookCard");
     
@@ -61,12 +61,12 @@ btn.addEventListener('click', () =>{
         bookItem.appendChild(bookDescription);
     
      
-        return results.appendChild(bookItem);
+        return bookItem;
     }
     
 
     books.forEach(book => {
-        bookRender(book);
+        results.appendChild(renderBook(book));
     });
 })
 .catch(error => console.error("Erro ao buscar os livros:", error));
