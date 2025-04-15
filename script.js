@@ -18,21 +18,55 @@ btn.addEventListener('click', () =>{
     let results = document.getElementById("results");
     results.innerHTML = ""
 
-    books.forEach(book => {
-        let bookItem = document.createElement("p");
-        let bookDescription = document.createElement("p");
-        let bookAuthors = document.createElement("p");
-        let bookImage = document.createElement("img");
+    // books.forEach(book => {
+    //     let bookItem = document.createElement("p");
+    //     let bookDescription = document.createElement("p");
+    //     let bookAuthors = document.createElement("p");
+    //     let bookImage = document.createElement("img");
 
-        bookItem.textContent = book.volumeInfo.title;
-        bookDescription.textContent = book.volumeInfo.description;
-        bookAuthors.textContent = book.volumeInfo.authors;
-        bookImage.src = book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || "https://via.placeholder.com/128x192.png?text=Sem+Imagem";
+    //     bookItem.textContent = book.volumeInfo.title;
+    //     bookDescription.textContent = book.volumeInfo.description;
+    //     bookAuthors.textContent = book.volumeInfo.authors;
+    //     bookImage.src = book.volumeInfo.imageLinks?.thumbnail || book.volumeInfo.imageLinks?.smallThumbnail || "https://via.placeholder.com/128x192.png?text=Sem+Imagem";
         
-        results.appendChild(bookItem);
-        results.appendChild(bookDescription);
-        results.appendChild(bookAuthors);
-        results.appendChild(bookImage);
+    //     results.appendChild(bookItem);
+    //     results.appendChild(bookDescription);
+    //     results.appendChild(bookAuthors);
+    //     results.appendChild(bookImage);
+    // });
+
+    function bookRender(book){
+        let bookItem = document.createElement("div");
+        bookItem.classList.add("bookCard");
+    
+        let bookImage = document.createElement("img");
+        bookImage.src = book.volumeInfo.imageLinks?.thumbnail || 
+                        book.volumeInfo.imageLinks?.smallThumbnail || "https://via.placeholder.com/128x192.png?text=Sem+Imagem";
+
+        let title = document.createElement("h3");
+        title.textContent = book.volumeInfo.title;
+    
+        let bookAuthors = document.createElement("div");
+        bookAuthors.classList.add("authors");
+        bookAuthors.textContent = book.volumeInfo.authors?.join(", ") || "Autor desconhecido";
+    
+        let bookDescription = document.createElement("div");
+        bookDescription.classList.add("description");
+        bookDescription.textContent = book.volumeInfo.description || "Sem descrição.";
+    
+   
+        bookItem.appendChild(bookImage);
+        bookItem.appendChild(title);
+        bookItem.appendChild(bookAuthors);
+        bookItem.appendChild(bookDescription);
+    
+     
+        return results.appendChild(bookItem);
+    }
+    
+
+    books.forEach(book => {
+        bookRender(book);
     });
 })
 .catch(error => console.error("Erro ao buscar os livros:", error));
@@ -46,3 +80,4 @@ btn.addEventListener('click', () =>{
 // let bookDescription = document.createElement("p");
 // let bookAuthors = document.createElement("p");
 // let bookImage = document.createElement("img");
+  
