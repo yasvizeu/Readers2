@@ -45,7 +45,13 @@ h1 {
 #searchButton:hover {
     background-color: #005bb5;
 }
-
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}
 /* .results {
     display: flex;
     flex-wrap: wrap;
@@ -145,14 +151,7 @@ h1 {
 
 /* Ao passar o mouse, a descrição será visível */
 .bookCard:hover .description {
-    max-height: 500px; /* Aumenta a altura da descrição quando o mouse passa */
+    max-height: 100px; /* Aumenta a altura da descrição quando o mouse passa */
     overflow: visible; /* Torna a descrição visível */
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    margin-top: 40px;
-}

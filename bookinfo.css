@@ -1,0 +1,16 @@
+/* Reset básico*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0073e6;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 10px;
+}

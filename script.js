@@ -18,7 +18,7 @@ btn.addEventListener('click', () =>{
     let results = document.getElementById("results");
     results.innerHTML = ""
 
-    function renderBook(book){
+    function renderBooks(book){
         let bookItem = document.createElement("div");
         bookItem.classList.add("bookCard");
     
@@ -36,7 +36,8 @@ btn.addEventListener('click', () =>{
         let bookDescription = document.createElement("div");
         bookDescription.classList.add("description");
         bookDescription.textContent = book.volumeInfo.description || "Sem descrição.";
-    
+
+        bookItem.addEventListener('click', () => bookClick(book.id));
    
         bookItem.appendChild(bookImage);
         bookItem.appendChild(title);
@@ -45,11 +46,17 @@ btn.addEventListener('click', () =>{
     
      
         return bookItem;
+
     }
+
     
+    function bookClick (bookId){
+        window.location.href = `bookinfo.html?id=${bookId}`;
+    }
+
 
     books.forEach(book => {
-        results.appendChild(renderBook(book));
+        results.appendChild(renderBooks(book));
     });
 })
 .catch(error => console.error("Erro ao buscar os livros:", error));
@@ -57,3 +64,14 @@ btn.addEventListener('click', () =>{
 
 
 
+
+
+
+//  hoisting
+// uma div no html para receber os dados dos livros
+// criar uma fução para renderizar esse método de acordo
+//   let bookItem = document.createElement("p");
+// let bookDescription = document.createElement("p");
+// let bookAuthors = document.createElement("p");
+// let bookImage = document.createElement("img");
+   
