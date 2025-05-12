@@ -11,7 +11,7 @@ btn.addEventListener('click', () =>{
     }
 
 
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=AIzaSyD7bejBajTdA3LdWZ88dxd-M5HWKfylSXg`)
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&key=AIzaSyD7bejBajTdA3LdWZ88dxd-M5HWKfylSXg&maxResults=40`)
   .then(response => response.json()) 
   .then(result => {
     let books = result.items;
